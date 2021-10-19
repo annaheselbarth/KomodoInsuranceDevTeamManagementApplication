@@ -1,0 +1,10 @@
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\bin\Debug\KIDevTeamManagementApp.exe.config
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\bin\Debug\KIDevTeamManagementApp.exe
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\bin\Debug\KIDevTeamManagementApp.pdb
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\bin\Debug\KIDevTeamManagementRepo.dll
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\bin\Debug\KIDevTeamManagementRepo.pdb
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\obj\Debug\KIDevTeamManagementApp.csproj.AssemblyReference.cache
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\obj\Debug\KIDevTeamManagementApp.csproj.CoreCompileInputs.cache
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\obj\Debug\KIDevTeamManagementApp.csproj.CopyComplete
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\obj\Debug\KIDevTeamManagementApp.exe
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementApp\obj\Debug\KIDevTeamManagementApp.pdb

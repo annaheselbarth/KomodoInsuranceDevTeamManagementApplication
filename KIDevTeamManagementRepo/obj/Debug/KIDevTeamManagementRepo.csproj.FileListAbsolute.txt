@@ -1,0 +1,6 @@
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementRepo\bin\Debug\KIDevTeamManagementRepo.dll
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementRepo\bin\Debug\KIDevTeamManagementRepo.pdb
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementRepo\obj\Debug\KIDevTeamManagementRepo.csproj.AssemblyReference.cache
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementRepo\obj\Debug\KIDevTeamManagementRepo.csproj.CoreCompileInputs.cache
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementRepo\obj\Debug\KIDevTeamManagementRepo.dll
+C:\Users\hesel\OneDrive\Desktop\ElevenFiftyProjects\GoldBadge\KIDevTeamManagementApp\KIDevTeamManagementRepo\obj\Debug\KIDevTeamManagementRepo.pdb
