@@ -13,28 +13,31 @@ namespace KIDevTeamManagementRepo
         //Name
         //ID number
         //Whether they have access to pluralsight
-        public Developer()
-        {
-
-        }
-        public Developer(string firstName, string lastName, int idNumber, bool pluralsight)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            IdNumber = idNumber;
-            Pluralsight = pluralsight;
-        }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName
+            public Developer() { }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string FullName
         {
             get
             {
                 string fullName = FirstName + " " + LastName;
-                return fullName;
+                return FullName;
             }
         }
-        public int IdNumber { get; set; }
-        public bool Pluralsight { get; set; }
-    }   
+            public string Id { get; set; }
+            public bool Pluralsight { get; set; }
+            public List<Developer> DevList { get; set; }
+
+        public Developer(string firstName, string lastName, int id, bool pluralsight)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Id = id;
+            Pluralsight = pluralsight;
+        }
+
+    }
+    
+
 }
+
