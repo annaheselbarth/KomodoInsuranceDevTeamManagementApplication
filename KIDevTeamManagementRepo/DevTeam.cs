@@ -17,7 +17,7 @@ namespace KIDevTeamManagementRepo
         public DevTeam()
         {
            
-    }
+        }
         public DevTeam(int teamId, string teamName, List<Developer> teamMembers)
         {
             
@@ -29,6 +29,8 @@ namespace KIDevTeamManagementRepo
         public int TeamId { get; set; }
         public string TeamName { get; set; }
         public List<Developer> TeamMembers { get; set; }
+
+        public List<DevTeam> TeamList { get; set; }
 
         public string devTeam { get; set; }
 

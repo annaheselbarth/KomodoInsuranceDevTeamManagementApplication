@@ -15,19 +15,38 @@ namespace KIDevTeamManagementRepo
    
     public class DevTeamRepo
     {
-        public List<DevTeam> _devTeamRepo = new List<DevTeam>();
+        //private List<DevTeam> _devTeamRepo = new List<DevTeam>();
+        //public List<DevTeam> DevTeamList = new List<DevTeam>();
+        
+        
+        DevTeam team = new DevTeam();
+        private List<DevTeam> _devTeamRepo = new List<DevTeam>();
+        int counter1;
+        //int counter1 = _devTeamRepo.Count;
+        
 
-        //Create
         public void CreateDevTeam(DevTeam devTeamInfo)
+        
+        {
+            
+            counter1 = _devTeamRepo.Count +1;
+            devTeamInfo.TeamId = counter1;
+
+            _devTeamRepo.Add(devTeamInfo);
+        }
+        //Create
+
+        
+        /*public void AddDev(DevTeam devTeamInfo)
         {
 
             _devTeamRepo.Add(devTeamInfo);
 
-        }
-        public void AddDevTeam(DevTeam team)
+        }*/
+        /*public void AddDevTeam(DevTeam team)
         {
             _devTeamRepo.Add(team);
-        }
+        }*/
 
         //Read
 
@@ -38,17 +57,21 @@ namespace KIDevTeamManagementRepo
 
         //Update
 
-        public bool UpdateTeam(int devTeamId, DevTeam newTeam)
+        public bool UpdateTeam(DevTeam devTeam, DevTeam newTeam)
         {
-            DevTeam oldTeam = GetTeamById(devTeamId);
-            if(oldTeam != null)
+            //DevTeam oldTeam = GetTeamById(devTeamId);
+            if(devTeam != null)
             {
-                oldTeam.TeamId = newTeam.TeamId;
-                oldTeam.TeamName = newTeam.TeamName;
-                oldTeam.TeamMembers = newTeam.TeamMembers;
+                devTeam.TeamId = newTeam.TeamId;
+                devTeam.TeamName = newTeam.TeamName;
+                devTeam.TeamMembers = newTeam.TeamMembers;
                 return true;
             }
-            return false;
+            else
+            {
+                return false;
+            }
+            
         }
         
         public bool AddDevToTeam(int devTeamid, Developer developer)
@@ -56,7 +79,7 @@ namespace KIDevTeamManagementRepo
             DevTeam team = GetTeamById(devTeamid);
             if(team != null)
             {
-                    team.TeamMembers.Add(developer);
+                    _devTeamRepo.Add(devTeam);
                     return true;
             }
             return false;
@@ -76,6 +99,22 @@ namespace KIDevTeamManagementRepo
             return false;
         }
 
+        DevTeam devTeam = new DevTeam();
+       
+       
+        public void AddDev(DevTeam team)
+        {
+            team.TeamId = counter1++;
+
+            devTeam.TeamList.Add(team);
+        }
+
+        /*public void AddDevToTeam(int TeamId, Developer developer)
+        {
+            DevTeam devTeam = GetOneTeam(TeamId);
+            devTeam.TeamMembers.Add(developer);
+        }*/
+
         //Delete
 
         public bool DeleteDevTeam(int teamId)
@@ -83,9 +122,9 @@ namespace KIDevTeamManagementRepo
             DevTeam team = GetTeamById(teamId);
             if(team != null)
             {
-                int initialCount = _devTeamRepo.Count;
-                _devTeamRepo.Remove(team);
-                if(initialCount > _devTeamRepo.Count)
+                int initialCount = devTeam.TeamList.Count;
+                devTeam.TeamList.Remove(team);
+                if(initialCount > devTeam.TeamList.Count)
                 {
                     return true;
                 }
@@ -117,14 +156,15 @@ namespace KIDevTeamManagementRepo
             throw new NotImplementedException();
         }
 
-        public void UpdateTeam(DevTeam targetDevTeam, DevTeam updateDevTeam)
+        /*public void UpdateTeam(DevTeam targetDevTeam, DevTeam updateDevTeam)
         {
             throw new NotImplementedException();
-        }
+        }*/
 
         public void DeleteDevTeam(DevTeam devTeam)
         {
-            throw new NotImplementedException();
+            bool result = _devTeamRepo.Remove(devTeam);
+            return;
         }
     }
 }
