@@ -26,7 +26,7 @@ namespace KIDevTeamManagementRepo
             TeamMembers = teamMembers;
         }
        
-        public string TeamId { get; set; }
+        public int TeamId { get; set; }
         public string TeamName { get; set; }
         public List<Developer> TeamMembers { get; set; }
 

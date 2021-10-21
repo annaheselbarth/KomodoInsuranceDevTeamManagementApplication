@@ -111,5 +111,20 @@ namespace KIDevTeamManagementRepo
             }
             return null;
         }
+
+        public DevTeam GetTeamById(object userInput)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateTeam(DevTeam targetDevTeam, DevTeam updateDevTeam)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteDevTeam(DevTeam devTeam)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

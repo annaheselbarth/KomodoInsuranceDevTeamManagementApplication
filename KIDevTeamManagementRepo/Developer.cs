@@ -16,15 +16,16 @@ namespace KIDevTeamManagementRepo
             public Developer() { }
             public string FirstName { get; set; }
             public string LastName { get; set; }
+            
             public string FullName
-        {
+            {
             get
             {
                 string fullName = FirstName + " " + LastName;
                 return FullName;
             }
-        }
-            public string Id { get; set; }
+            }
+            public int Id { get; set; }
             public bool Pluralsight { get; set; }
             public List<Developer> DevList { get; set; }
 
