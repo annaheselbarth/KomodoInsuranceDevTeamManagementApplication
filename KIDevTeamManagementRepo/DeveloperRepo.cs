@@ -10,16 +10,16 @@ namespace KIDevTeamManagementRepo
     {
         //Create
         
-        public List<Developer> _developerList = new List<Developer>();
+        public List<Developer> _developerRepo = new List<Developer>();
         public void AddDev(Developer devInfo)
         {
-            _developerList.Add(devInfo);
+            _developerRepo.Add(devInfo);
         }
 
         public void CreateNewDev(Developer devInfo)
         {
             
-            _developerList.Add(devInfo);
+            _developerRepo.Add(devInfo);
            
         }
         
@@ -27,7 +27,7 @@ namespace KIDevTeamManagementRepo
         //Read
         public List<Developer> GetDevList()
         {
-            return _developerList;
+            return _developerRepo;
         }
 
         //Update
@@ -52,9 +52,9 @@ namespace KIDevTeamManagementRepo
             Developer dev = GetDevById(id);
             if (dev != null)
             {
-                int initialCount = _developerList.Count;
-                _developerList.Remove(dev);
-                if(initialCount > _developerList.Count)
+                int initialCount = _developerRepo.Count;
+                _developerRepo.Remove(dev);
+                if(initialCount > _developerRepo.Count)
                 {
                     return true;
                 }
@@ -69,7 +69,7 @@ namespace KIDevTeamManagementRepo
 
         public Developer GetDevById(int id)
         {
-            foreach(Developer dev in _developerList)
+            foreach(Developer dev in _developerRepo)
             {
                 if(dev.Id == id)
                 {

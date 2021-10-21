@@ -12,7 +12,10 @@ namespace KIDevTeamManagementApp
 
         private DeveloperRepo _developerRepo = new DeveloperRepo();
         private DevTeamRepo _devTeamRepo = new DevTeamRepo();
-        private int userInput;
+
+        
+
+        
 
         public void Run()
         {
@@ -99,6 +102,8 @@ namespace KIDevTeamManagementApp
 
         private void DevTeamMenu()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
             bool continueRunTeam = true;
             while (continueRunTeam)
             {
@@ -135,18 +140,20 @@ namespace KIDevTeamManagementApp
 
         public void CreateNewDev()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
             Developer developer = new Developer();
             Console.Clear();
             Console.WriteLine(" Enter in New Developer Information. \n\n" + "Please enter in the first name of the new developer:  \n\n");
             developer.FirstName = Console.ReadLine();
             _developerRepo.AddDev(developer);
 
-            Console.WriteLine("Please enter in the last name of the new developer:  \n\n");
+            Console.WriteLine("\n\n Please enter in the last name of the new developer:  \n\n");
             developer.LastName = Console.ReadLine();
-            //_developerRepo.AddDev(developer);
+            _developerRepo.AddDev(developer);
 
-            /*Console.WriteLine($" The new developer's name is: " + developer.FullName + "Is this correct? Answer Yes or No");
-            string answer = Console.ReadLine().ToUpper();
+            Console.WriteLine($"\n\n The new developer's name is: {developer.FullName} ");
+            /*string answer = Console.ReadLine().ToUpper();
             bool userInput = true;
             while (userInput)
 
@@ -165,7 +172,7 @@ namespace KIDevTeamManagementApp
             Console.WriteLine("Does this developer have access to pluralsight? True or False  \n\n");
 
             string userAnswer = Console.ReadLine().ToLower();
-            developer.Pluralsight = access(userAnswer);
+            developer.Pluralsight = Access(userAnswer);
             _developerRepo.AddDev(developer);
             Console.Clear();
             Console.WriteLine("This developer was added.  \n\n");
@@ -179,7 +186,7 @@ namespace KIDevTeamManagementApp
 
         }
 
-        private bool access(string userAnswer)
+        private bool Access(string userAnswer)
         {
             while (userAnswer != "true" && userAnswer != "false")
             {
@@ -252,6 +259,8 @@ namespace KIDevTeamManagementApp
 
         private void RemoveDev()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
             bool removeDev = true;
             while (removeDev)
             {
@@ -267,7 +276,8 @@ namespace KIDevTeamManagementApp
                 {
                     Console.Write("\nPlease enter the Id number for the Employee you would like to remove: ");
 
-                    //Make sure user gave a number
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.Black;
                     bool checkId = true;
                     while (checkId)
                     {
@@ -280,8 +290,8 @@ namespace KIDevTeamManagementApp
                             return;
                         }
 
-                        Console.WriteLine($"\nAre you sure you want to delete {developer.FullName}?");
-                        Console.Write("Please confirm with Yes or No: ");
+                        Console.WriteLine($"\n Are you sure you want to delete {developer.FullName}?");
+                        Console.Write("\n Please confirm with Yes or No: ");
                         string userAnswer = Console.ReadLine().ToLower();
                         if (userAnswer == "yes")
                         {
@@ -289,6 +299,8 @@ namespace KIDevTeamManagementApp
                             //_developerRepo.RemoveDev();
                             Console.WriteLine("This developer was removed.   \n\n");
                             DisplayDevInfo(developer);
+                            Console.ReadKey();
+                            return;
                         }
                         else if (userAnswer == "no")
                         {
@@ -298,23 +310,29 @@ namespace KIDevTeamManagementApp
                         }
                         else
                         {
+                            Console.ReadKey();
                             return;
                         }
-                        Console.Write("\nWould you like to remove another Developer? Yes or No: ");
+                        /*Console.Write("\nWould you like to remove another Developer? Yes or No: ");
                         string answer = Console.ReadLine().ToUpper();
                         if (answer == "Yes")
                         {
                             continue;
                         }
-                        else if (answer == "N0")
+                        else if (answer == "No")
                         {
                             removeDev = false;
+                            Console.ReadKey();
+                            return;
                         }
                         else
                         {
-                            removeDev = false;
+                            
+                            
+                            Console.ReadKey();
+                            return;
 
-                        }
+                        }*/
                     }
 
                 }
@@ -323,6 +341,8 @@ namespace KIDevTeamManagementApp
 
         private int Number()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
             bool checkId = true;
             while (checkId)
             {
@@ -388,6 +408,8 @@ namespace KIDevTeamManagementApp
 
         public void UpdateTeam()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
             bool updateDevTeam = true;
             while (updateDevTeam)
             {
@@ -403,7 +425,7 @@ namespace KIDevTeamManagementApp
                 {
                     Console.WriteLine("\n Please enter the Id number for the Team you would like to update:  \n");
                     var uniqueId = Number();
-                    DevTeam targetDevTeam = _devTeamRepo.GetTeamById(uniqueId);
+                    DevTeam targetDevTeam = _devTeamRepo.GetTeamById(userInput);
                     if (targetDevTeam == null)
                     {
                         Console.WriteLine("/n We are not able to find Team Id.  Press any key to continue.  \n\n");
@@ -425,9 +447,13 @@ namespace KIDevTeamManagementApp
 
         public void RemoveDevTeam()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
             bool removeDevTeam = true;
             while (removeDevTeam)
             {
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.ForegroundColor = ConsoleColor.Black;
                 Console.Clear();
                 GetDevTeams();
 
@@ -453,11 +479,16 @@ namespace KIDevTeamManagementApp
                         Console.Clear();
                         _devTeamRepo.DeleteDevTeam(devTeam);
                         Console.WriteLine($"The {devTeam.TeamName} team has been removed. Press any key to continue. \n\n");
-                        
+
+                    }
+                    else if (answer == "no")
+                    {
+                        Console.WriteLine($"\n Team {devTeam.TeamName} was not deleted. Press any key to continue.");
+                        Console.ReadKey();
                     }
                     else
                     {
-                        Console.WriteLine($"\n Team {devTeam.TeamName} was not deleted. Press any key to continue.");
+                        Console.WriteLine("Invalid response. Press any key to continue. ");
                         Console.ReadKey();
                     }
                 }
@@ -487,6 +518,8 @@ namespace KIDevTeamManagementApp
 
         private void GetDevTeams()
         {
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("****************************  List of Developer Teams  *************************  \n\n\n");
             List<DevTeam> devTeams = _devTeamRepo.TeamList();
             if (devTeams.Count == 0)
@@ -503,6 +536,8 @@ namespace KIDevTeamManagementApp
                 }
             }
         }
+
+        private readonly int userInput;
     }
 
 }

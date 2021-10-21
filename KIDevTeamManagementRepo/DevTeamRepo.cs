@@ -15,25 +15,25 @@ namespace KIDevTeamManagementRepo
    
     public class DevTeamRepo
     {
-        public List<DevTeam> _devTeam = new List<DevTeam>();
+        public List<DevTeam> _devTeamRepo = new List<DevTeam>();
 
         //Create
         public void CreateDevTeam(DevTeam devTeamInfo)
         {
 
-            _devTeam.Add(devTeamInfo);
+            _devTeamRepo.Add(devTeamInfo);
 
         }
         public void AddDevTeam(DevTeam team)
         {
-            _devTeam.Add(team);
+            _devTeamRepo.Add(team);
         }
 
         //Read
 
         public List<DevTeam> TeamList()
         {
-            return _devTeam;
+            return _devTeamRepo;
         }
 
         //Update
@@ -83,9 +83,9 @@ namespace KIDevTeamManagementRepo
             DevTeam team = GetTeamById(teamId);
             if(team != null)
             {
-                int initialCount = _devTeam.Count;
-                _devTeam.Remove(team);
-                if(initialCount > _devTeam.Count)
+                int initialCount = _devTeamRepo.Count;
+                _devTeamRepo.Remove(team);
+                if(initialCount > _devTeamRepo.Count)
                 {
                     return true;
                 }
@@ -102,7 +102,7 @@ namespace KIDevTeamManagementRepo
 
         public DevTeam GetTeamById(int id)
         {
-            foreach(DevTeam team in _devTeam)
+            foreach(DevTeam team in _devTeamRepo)
             {
                 if(team.TeamId == id)
                 {

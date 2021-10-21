@@ -21,7 +21,7 @@ namespace KIDevTeamManagementRepo
             {
             get
             {
-                string fullName = FirstName + " " + LastName;
+                string FullName = FirstName + " " + LastName;
                 return FullName;
             }
             }
