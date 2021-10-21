@@ -73,25 +73,7 @@ namespace KIDevTeamManagementRepo
             bool result = _developerRepo.Remove(developer);
             return result;
         }
-        /*public bool RemoveDev(int id)
-        {
-            Developer dev = GetDevById(int id);
-            if (dev != null)
-            {
-                int initialCount = _developerRepo.Count;
-                _developerRepo.Remove(dev);
-                if(initialCount > _developerRepo.Count)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return false;
-
-        }*/
+        
 
        
     }

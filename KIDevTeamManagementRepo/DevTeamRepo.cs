@@ -15,10 +15,8 @@ namespace KIDevTeamManagementRepo
    
     public class DevTeamRepo
     {
-        //private List<DevTeam> _devTeamRepo = new List<DevTeam>();
-        //public List<DevTeam> DevTeamList = new List<DevTeam>();
-        
-        
+
+        //Create
         DevTeam team = new DevTeam();
         private List<DevTeam> _devTeamRepo = new List<DevTeam>();
         int counter1;
@@ -34,19 +32,10 @@ namespace KIDevTeamManagementRepo
 
             _devTeamRepo.Add(devTeamInfo);
         }
-        //Create
+        
 
         
-        /*public void AddDev(DevTeam devTeamInfo)
-        {
-
-            _devTeamRepo.Add(devTeamInfo);
-
-        }*/
-        /*public void AddDevTeam(DevTeam team)
-        {
-            _devTeamRepo.Add(team);
-        }*/
+        
 
         //Read
 
@@ -150,16 +139,6 @@ namespace KIDevTeamManagementRepo
             }
             return null;
         }
-
-        public DevTeam GetTeamById(object userInput)
-        {
-            throw new NotImplementedException();
-        }
-
-        /*public void UpdateTeam(DevTeam targetDevTeam, DevTeam updateDevTeam)
-        {
-            throw new NotImplementedException();
-        }*/
 
         public void DeleteDevTeam(DevTeam devTeam)
         {

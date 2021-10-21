@@ -68,7 +68,7 @@ namespace KIDevTeamManagementApp
             while (continueRunDev)
             {
                 Console.Clear();
-                Console.WriteLine("\n\n\n********************************************* Developer Menu Options *********************************************** \n\n\n\n" + "  Enter a Number from the menu below of the Option you would like to begin with: \n\n\n" + "  1. Create New Developer \n\n" + "  2. Edit Developer Information \n\n" + "  3. Remove Developer \n\n" + "  4. Access to Pluralsight  \n\n" + "  5. Return to Main Menu  \n\n");
+                Console.WriteLine("\n\n\n********************************************* Developer Menu Options *********************************************** \n\n\n\n" + "  Enter a Number from the menu below of the Option you would like to begin with: \n\n\n" + "  1. Create New Developer \n\n" + "  2. Edit Developer Information \n\n" + "  3. Remove Developer \n\n" + "  4. Access to Pluralsight  \n\n" + "  5. List of Developers. \n\n" + "  6. Return to Main Menu  \n\n");
 
 
                 string userInput = Console.ReadLine();
@@ -88,6 +88,9 @@ namespace KIDevTeamManagementApp
                         Pluralsight();
                         break;
                     case "5":
+                        GetDevList();
+                        break;
+                    case "6":
                         continueRunDev = false;
                         break;
                     default:
