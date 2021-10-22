@@ -50,7 +50,6 @@ namespace KIDevTeamManagementRepo
         //Update
         public bool UpdateExistingDev(Developer developer, Developer newDev)
         {
-            //Developer oldDev = GetDevById(int id);
             if(developer != null)
             {
                 developer.FirstName = newDev.FirstName;

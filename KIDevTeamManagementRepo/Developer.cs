@@ -27,7 +27,7 @@ namespace KIDevTeamManagementRepo
             }
             public int Id { get; set; }
             public bool Pluralsight { get; set; }
-            //public List<Developer> DevList { get; set; }
+           
 
         public Developer(string firstName, string lastName, int id, bool pluralsight)
         {

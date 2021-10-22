@@ -20,7 +20,6 @@ namespace KIDevTeamManagementRepo
         DevTeam team = new DevTeam();
         private List<DevTeam> _devTeamRepo = new List<DevTeam>();
         int counter1;
-        //int counter1 = _devTeamRepo.Count;
         
 
         public void CreateDevTeam(DevTeam devTeamInfo)
@@ -48,7 +47,6 @@ namespace KIDevTeamManagementRepo
 
         public bool UpdateTeam(DevTeam devTeam, DevTeam newTeam)
         {
-            //DevTeam oldTeam = GetTeamById(devTeamId);
             if(devTeam != null)
             {
                 devTeam.TeamId = newTeam.TeamId;
@@ -98,11 +96,6 @@ namespace KIDevTeamManagementRepo
             devTeam.TeamList.Add(team);
         }
 
-        /*public void AddDevToTeam(int TeamId, Developer developer)
-        {
-            DevTeam devTeam = GetOneTeam(TeamId);
-            devTeam.TeamMembers.Add(developer);
-        }*/
 
         //Delete
 

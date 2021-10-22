@@ -68,7 +68,7 @@ namespace KIDevTeamManagementApp
             while (continueRunDev)
             {
                 Console.Clear();
-                Console.WriteLine("\n\n\n********************************************* Developer Menu Options *********************************************** \n\n\n\n" + "  Enter a Number from the menu below of the Option you would like to begin with: \n\n\n" + "  1. Create New Developer \n\n" + "  2. Edit Developer Information \n\n" + "  3. Remove Developer \n\n" + "  4. Access to Pluralsight  \n\n" + "  5. List of Developers. \n\n" + "  6. Return to Main Menu  \n\n");
+                Console.WriteLine("\n\n\n********************************************* Developer Menu Options *********************************************** \n\n\n\n" + "  Enter a Number from the menu below of the Option you would like to begin with: \n\n\n" + "  1. Create New Developer \n\n" + "  2. Remove Developer \n\n" + "  3. Access to Pluralsight  \n\n"  + "  4. Return to Main Menu  \n\n");
 
 
                 string userInput = Console.ReadLine();
@@ -85,13 +85,10 @@ namespace KIDevTeamManagementApp
                         Pluralsight();
                         break;
                     case "4":
-                        GetDevList();
-                        break;
-                    case "5":
                         continueRunDev = false;
                         break;
                     default:
-                        Console.WriteLine("  \n Please enter a valid number between 1-6. \n\n" + "  Press any key to continue.");
+                        Console.WriteLine("  \n Please enter a valid number between 1-4. \n\n" + "  Press any key to continue.");
                         break;
                         
 
@@ -328,7 +325,8 @@ namespace KIDevTeamManagementApp
                         GetDevList();
                         Console.WriteLine("Select a Developer by Id:  \n\n");
                         string input = Console.ReadLine();
-                        var devId = int.Parse(input);
+                        //var or int
+                        int devId = int.Parse(input);
                         var developer = _developerRepo.GetDevById(devId);
                         _devTeamRepo.AddDevToTeam(devTeam.TeamId, developer);
                         return;
@@ -367,7 +365,7 @@ namespace KIDevTeamManagementApp
             while (continueRunTeam)
             {
                 Console.Clear();
-            Console.WriteLine("\n\n\n How would you like to update the team? Enter a number below for the option you would like to begin with: \n\n\n" + "  1. Add New Developer to Team.  \n\n" + "  2. Remove a Developer from Team. \n\n" + "  3. Change Team Name  \n\n");
+            Console.WriteLine("\n\n\n How would you like to update the team? Enter a number below for the option you would like to begin with: \n\n\n" + "  1. Add New Developer to Team.  \n\n" + "  2. Add Multple Developers to Team.  \n\n" + "  3. Remove a Developer from Team. \n\n" + "  3. Change Team Name  \n\n");
 
             string userInput = Console.ReadLine();
             switch (userInput)
@@ -460,8 +458,43 @@ namespace KIDevTeamManagementApp
 
         public void AddDevListToTeam()
         {
+            Console.Clear();
+            Console.WriteLine("What team would you like to add developers too? Please enter team ID.");
+            string inputTeamId = Console.ReadLine();
+            var teamId = int.Parse(inputTeamId);
+            var devTeam = _devTeamRepo.GetTeamById(teamId);
 
-        }
+            Console.WriteLine(" Would you like to add a list of developers to this team. Answer Yes or No. ");
+            string answer = Console.ReadLine().ToUpper();
+            bool continueToRun = true;
+            while (continueToRun)
+
+            {
+                if (answer == "YES")
+                {
+                    GetDevList();
+                    AddDevListToTeam();
+                    Console.WriteLine("Select a Developers by Id:  \n\n");
+                    string input = Console.ReadLine();
+                    var devId = int.Parse(input);
+                    var developer = _developerRepo.GetDevById(devId);
+                    _devTeamRepo.AddDevToTeam(devTeam.TeamId, developer);
+                    return;
+
+
+
+                }
+                else if (answer == "NO")
+                {
+                    Console.WriteLine(" Press any key to continue.");
+                    return;
+                }
+                Console.ReadKey();
+                return;
+            }
+
+        
+    }
 
         public void RemoveDevFromTeam()
         {
@@ -603,6 +636,7 @@ namespace KIDevTeamManagementApp
                     index++;
                 }
             }
+            Console.ReadKey();
         }
 
         private void GetDevTeams()
@@ -624,6 +658,7 @@ namespace KIDevTeamManagementApp
                     index++;
                 }
             }
+            Console.ReadKey();
         }
 
 
