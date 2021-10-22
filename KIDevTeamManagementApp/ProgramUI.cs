@@ -24,13 +24,6 @@ namespace KIDevTeamManagementApp
         }
         public void RunMenu(bool continueToRun)
         {
-
-        //}
-
-
-        //private void RunMenu()
-        //{
-            //bool continueToRun = true;
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Black;
             while (continueToRun)
@@ -325,8 +318,7 @@ namespace KIDevTeamManagementApp
                         GetDevList();
                         Console.WriteLine("Select a Developer by Id:  \n\n");
                         string input = Console.ReadLine();
-                        //var or int
-                        int devId = int.Parse(input);
+                        var devId = int.Parse(input);
                         var developer = _developerRepo.GetDevById(devId);
                         _devTeamRepo.AddDevToTeam(devTeam.TeamId, developer);
                         return;
@@ -365,7 +357,7 @@ namespace KIDevTeamManagementApp
             while (continueRunTeam)
             {
                 Console.Clear();
-            Console.WriteLine("\n\n\n How would you like to update the team? Enter a number below for the option you would like to begin with: \n\n\n" + "  1. Add New Developer to Team.  \n\n" + "  2. Add Multple Developers to Team.  \n\n" + "  3. Remove a Developer from Team. \n\n" + "  3. Change Team Name  \n\n");
+            Console.WriteLine("\n\n\n How would you like to update the team? Enter a number below for the option you would like to begin with: \n\n\n" + "  1. Add New Developer to Team.  \n\n" + "  2. Add Multple Developers to Team.  \n\n" + "  3. Remove a Developer from Team. \n\n" + "  4. Return to Main Menu.  \n\n" );
 
             string userInput = Console.ReadLine();
             switch (userInput)
@@ -465,12 +457,12 @@ namespace KIDevTeamManagementApp
             var devTeam = _devTeamRepo.GetTeamById(teamId);
 
             Console.WriteLine(" Would you like to add a list of developers to this team. Answer Yes or No. ");
-            string answer = Console.ReadLine().ToUpper();
+            string answerList = Console.ReadLine().ToUpper();
             bool continueToRun = true;
             while (continueToRun)
 
             {
-                if (answer == "YES")
+                if (answerList == "YES")
                 {
                     GetDevList();
                     AddDevListToTeam();
@@ -484,7 +476,7 @@ namespace KIDevTeamManagementApp
 
 
                 }
-                else if (answer == "NO")
+                else if (answerList == "NO")
                 {
                     Console.WriteLine(" Press any key to continue.");
                     return;
